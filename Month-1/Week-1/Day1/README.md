@@ -33,5 +33,3 @@ If you don’t understand how a machine truly works, you won’t know how to bre
 - What is the exact difference between logic and algorithm?
 - Why does the heap exist if we still define the size with malloc(20)?
 
-## Next Steps
-- Day 2: Binary system in action, conversions, and understanding memory types.
