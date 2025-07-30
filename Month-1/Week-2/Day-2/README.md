@@ -1,69 +1,41 @@
-# OSI Model – Detailed Notes (Day 2)
+# 🛰️ Day 2 – OSI Model + Packet Flow (Week 2 – Networking)
 
-## **What is OSI Model?**
-The **OSI (Open Systems Interconnection)** model is a **conceptual framework** used to understand and standardize how data is transmitted across a network.  
-It divides communication into **7 layers**, where each layer performs a specific role.
+## 📚 What I Learned
 
-**Why OSI Model?**
-- To break down complex network communications into simpler steps.
-- To ensure interoperability between different devices, systems, and protocols.
-- To help engineers debug and design better networking systems.
+### 🔹 OSI Model: The 7 Layers
 
----
+The **OSI Model (Open Systems Interconnection)** helps standardize the functions of a telecommunication or computing system without regard to its underlying internal structure and technology.
 
-## **7 Layers of OSI Model (Bottom to Top)**
-
-### **1. Physical Layer (Layer 1)**
-- **Role:** Deals with physical medium (cables, signals, bits).
-- **Examples:** Ethernet cables, fiber optics, Wi-Fi signals.
-- **Key Units:** Bits (0s and 1s).
-
-### **2. Data Link Layer (Layer 2)**
-- **Role:** Provides error detection, MAC addresses, and frames.
-- **Examples:** Switches, ARP, Ethernet frames.
-- **Key Units:** Frames.
-- **Key Protocols:** PPP, Ethernet.
-
-### **3. Network Layer (Layer 3)**
-- **Role:** Responsible for routing data between devices.
-- **Examples:** IP (IPv4/IPv6), Routers.
-- **Key Units:** Packets.
-- **Key Protocols:** ICMP, IP.
-
-### **4. Transport Layer (Layer 4)**
-- **Role:** Ensures complete, error-free data delivery.
-- **Examples:** TCP, UDP.
-- **Key Units:** Segments (TCP) / Datagrams (UDP).
-- **Key Protocols:** TCP, UDP.
-
-### **5. Session Layer (Layer 5)**
-- **Role:** Manages sessions (connections) between devices.
-- **Examples:** Remote Procedure Calls (RPC), NetBIOS.
-
-### **6. Presentation Layer (Layer 6)**
-- **Role:** Data translation, encryption, and compression.
-- **Examples:** JPEG, PNG, SSL/TLS.
-
-### **7. Application Layer (Layer 7)**
-- **Role:** Provides network services to end-users.
-- **Examples:** HTTP, FTP, SMTP, DNS.
+| Layer | Name            | Function                              | Protocol Examples      |
+|-------|------------------|----------------------------------------|-------------------------|
+| 7     | Application      | Network process to application         | HTTP, FTP, DNS          |
+| 6     | Presentation     | Data format, encryption                | SSL, JPEG, MPEG         |
+| 5     | Session          | Interhost communication                | NetBIOS, RPC            |
+| 4     | Transport        | End-to-end connections and reliability | TCP, UDP                |
+| 3     | Network          | Path determination, IP addressing      | IP, ICMP, OSPF          |
+| 2     | Data Link        | MAC addressing, error detection        | Ethernet, PPP, ARP      |
+| 1     | Physical         | Bits, cables, hardware                 | Wi-Fi, Cables, Hubs     |
 
 ---
 
-## **Packet Flow Example**
-When you open a website:
-1. Application Layer: Your browser sends an HTTP GET request.
-2. Transport Layer: HTTP request is broken into TCP segments.
-3. Network Layer: Each TCP segment is converted into packets with IP addresses.
-4. Data Link Layer: Packets are turned into frames.
-5. Physical Layer: Frames are converted to signals sent over the cable/Wi-Fi.
+## 🔧 Practical Tasks
+
+### ✅ Task 1: OSI Diagram Creation
+- Created a custom diagram mapping tools and protocols to OSI layers.
+- Mapped `ping` to Layer 3, `HTTP` to Layer 7, etc.
+
+
+### ✅ Task 2: Layer Identification via Tools
+- Explored tools like browser dev tools and command-line utilities (`ping`, `curl`) to identify which layer they operate at.
 
 ---
 
-## **Tools and OSI Layers**
-- **Ping:** Works at Network Layer (Layer 3).
-- **HTTP:** Works at Application Layer (Layer 7).
-- **Wireshark:** Can analyze traffic across multiple OSI layers.
+## 🧾 Summary Notes
+
+- OSI model helps isolate issues and understand how networking works.
+- Layer abstraction is important for modular troubleshooting.
+- Real-world protocols can map to more than one layer logically.
 
 ---
+
 

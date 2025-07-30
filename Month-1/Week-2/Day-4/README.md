@@ -1,69 +1,55 @@
-# OSI Model – Detailed Notes (Day 2)
+# 🌐 Day 4 – IP Addressing, Subnetting & Classes (Week 2 – Networking)
 
-## **What is OSI Model?**
-The **OSI (Open Systems Interconnection)** model is a **conceptual framework** used to understand and standardize how data is transmitted across a network.  
-It divides communication into **7 layers**, where each layer performs a specific role.
+## 🧠 What I Learned (Theory)
 
-**Why OSI Model?**
-- To break down complex network communications into simpler steps.
-- To ensure interoperability between different devices, systems, and protocols.
-- To help engineers debug and design better networking systems.
+### 🔹 1. IP Addressing (IPv4)
+An **IP address** (Internet Protocol Address) is a 32-bit number that uniquely identifies a device on a network. It is written in **dotted decimal notation**, e.g., `192.168.1.1`.
 
----
+Each IP address has two parts:
+- **Network ID** – Identifies the network.
+- **Host ID** – Identifies the device on that network.
 
-## **7 Layers of OSI Model (Bottom to Top)**
+### 🔹 2. IP Address Classes
+There are 5 classes (A-E), but only A, B, and C are commonly used for host addressing.
 
-### **1. Physical Layer (Layer 1)**
-- **Role:** Deals with physical medium (cables, signals, bits).
-- **Examples:** Ethernet cables, fiber optics, Wi-Fi signals.
-- **Key Units:** Bits (0s and 1s).
+| Class | Range                  | Default Subnet Mask | Hosts per Network | Purpose               |
+|-------|------------------------|----------------------|-------------------|------------------------|
+| A     | 0.0.0.0 – 127.255.255.255 | 255.0.0.0            | ~16 million       | Very large networks    |
+| B     | 128.0.0.0 – 191.255.255.255 | 255.255.0.0        | ~65,000           | Medium networks        |
+| C     | 192.0.0.0 – 223.255.255.255 | 255.255.255.0      | 254               | Small networks         |
 
-### **2. Data Link Layer (Layer 2)**
-- **Role:** Provides error detection, MAC addresses, and frames.
-- **Examples:** Switches, ARP, Ethernet frames.
-- **Key Units:** Frames.
-- **Key Protocols:** PPP, Ethernet.
+### 🔹 3. Subnetting
+**Subnetting** is the technique of dividing a larger network into smaller, manageable sub-networks (subnets).
 
-### **3. Network Layer (Layer 3)**
-- **Role:** Responsible for routing data between devices.
-- **Examples:** IP (IPv4/IPv6), Routers.
-- **Key Units:** Packets.
-- **Key Protocols:** ICMP, IP.
+- **CIDR Notation**: `/24`, `/26`, etc., represents how many bits are used for the network.
+- Helps improve routing efficiency and enhances security.
 
-### **4. Transport Layer (Layer 4)**
-- **Role:** Ensures complete, error-free data delivery.
-- **Examples:** TCP, UDP.
-- **Key Units:** Segments (TCP) / Datagrams (UDP).
-- **Key Protocols:** TCP, UDP.
-
-### **5. Session Layer (Layer 5)**
-- **Role:** Manages sessions (connections) between devices.
-- **Examples:** Remote Procedure Calls (RPC), NetBIOS.
-
-### **6. Presentation Layer (Layer 6)**
-- **Role:** Data translation, encryption, and compression.
-- **Examples:** JPEG, PNG, SSL/TLS.
-
-### **7. Application Layer (Layer 7)**
-- **Role:** Provides network services to end-users.
-- **Examples:** HTTP, FTP, SMTP, DNS.
+#### Example:
+- IP: `192.168.10.0/26`
+- Subnet Mask: `255.255.255.192`
+- Number of Subnets: `4`
+- Hosts per Subnet: `62`
 
 ---
 
-## **Packet Flow Example**
-When you open a website:
-1. Application Layer: Your browser sends an HTTP GET request.
-2. Transport Layer: HTTP request is broken into TCP segments.
-3. Network Layer: Each TCP segment is converted into packets with IP addresses.
-4. Data Link Layer: Packets are turned into frames.
-5. Physical Layer: Frames are converted to signals sent over the cable/Wi-Fi.
+## 🔧 Practical Work (Hands-On)
+
+### ✅ Task 1: Solved 10 Subnetting Problems
+- Converted CIDR to subnet mask
+- Found:
+  - Network Address
+  - Broadcast Address
+  - First & Last usable IP
+  - Total number of hosts
+- Practiced binary-to-decimal IP conversion
+
+📄 File: `Day4_Subnetting_Practice.pdf`
 
 ---
 
-## **Tools and OSI Layers**
-- **Ping:** Works at Network Layer (Layer 3).
-- **HTTP:** Works at Application Layer (Layer 7).
-- **Wireshark:** Can analyze traffic across multiple OSI layers.
+### ✅ Task 2: Analyzed My System's IP Configuration
+- Used command-line tools:
 
----
-
+#### On Windows:
+```sh
+ipconfig
