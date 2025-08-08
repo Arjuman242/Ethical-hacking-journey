@@ -32,8 +32,3 @@ The mindmap connects:
 - Networking is layered abstraction; each layer adds its own headers.
 - Real-world debugging always combines **concepts (OSI/TCP-IP)** + **tools (Wireshark, traceroute, etc.)**.
 
----
-
-## Output
-- `week2_mindmap.png` – Summarizes OSI, TCP/IP, tools, and packet flow.
-- `weekly_recap.md` – Explains Week 2 in narrative form.
