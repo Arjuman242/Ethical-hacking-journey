@@ -25,10 +25,4 @@ The mindmap connects:
    - Encapsulation (Application → Physical)
    - Decapsulation (Physical → Application)
 
----
-
-## Key Takeaways
-- Theoretical models are validated through tools like Wireshark.
-- Networking is layered abstraction; each layer adds its own headers.
-- Real-world debugging always combines **concepts (OSI/TCP-IP)** + **tools (Wireshark, traceroute, etc.)**.
 
