@@ -1,36 +1,54 @@
-# Day 1 — Wireshark Packet Capture & Analysis
+# 🕵️ Day 1 – Week 3: Wireshark Basics & Packet Analysis  
 
-## 📌 Overview
-Today’s focus was on using **Wireshark** to capture, filter, and analyze network packets.  
-Wireshark is an open-source network protocol analyzer that allows real-time packet inspection across OSI layers.
-
----
-
-## 🛠 Tools Used
-- **Wireshark** (latest version)
-- **Command Prompt / Terminal** for generating network traffic
+## 📌 Overview  
+This session was focused on **Wireshark** – a powerful tool for capturing and analyzing network traffic.  
+We explored how to view and analyze **TCP**, **UDP**, and **DNS queries**, and how to detect problems such as **packet loss** and identify whether an issue comes from the **client** or the **server**.  
 
 ---
 
-## 📚 Learning Objectives
-1. Understand how to start and stop packet captures.
-2. Apply display filters for targeted packet analysis.
-3. Interpret packet details across OSI layers.
-4. Practice with common networking protocols.
+## 🔎 What I Learned  
+
+### 1. TCP Packets  
+- TCP is **connection-oriented** (3-way handshake: SYN → SYN-ACK → ACK).  
+- Used by protocols like **HTTP, HTTPS, FTP, SMTP**.  
+- **In Wireshark:**  
+  - Filter → `tcp`  
+  - Look for flags (SYN, ACK, FIN, RST).  
+  - Check for **retransmissions** → may indicate packet loss.  
+
+### 2. UDP Packets  
+- UDP is **connectionless** (no handshake, faster but less reliable).  
+- Common in **DNS, VoIP, streaming**.  
+- **In Wireshark:**  
+  - Filter → `udp`  
+  - Simpler headers, no handshakes.  
+  - Loss is harder to detect, often visible in app behavior.  
+
+### 3. DNS Queries  
+- DNS translates **domain names → IP addresses**.  
+- Usually uses **UDP (port 53)**, sometimes TCP.  
+- **In Wireshark:**  
+  - Filter → `dns`  
+  - Look at **Standard query** and **Response**.  
+  - Delays or missing responses → cause browsing issues.  
 
 ---
 
-## 📂 Steps Followed
+## 🛠 Troubleshooting with Wireshark  
 
-### 1. Starting a Capture
-1. Launch Wireshark.
-2. Select the active network interface (e.g., Wi-Fi, Ethernet).
-3. Click the **blue shark fin** to start capturing packets.
+| Problem Type    | How to Detect in Wireshark                     | Likely Cause |
+|-----------------|------------------------------------------------|--------------|
+| **Packet Loss** | TCP retransmissions, missing DNS responses     | Network congestion, bad link |
+| **Client Issue**| No packets leaving client, malformed requests  | Misconfigured client, firewall |
+| **Server Issue**| No responses from server, RST packets seen     | Server down, overloaded, firewall rules |
+| **Latency**     | High response times in DNS or TCP handshakes   | Slow routing, congestion |
 
 ---
 
-### 2. Generating Traffic
-To make packet analysis meaningful:
-```bash
-ping 8.8.8.8
-curl example.com
+## 📂 Example Filters Used  
+```wireshark
+tcp
+udp
+dns
+tcp.analysis.retransmission
+icmp
