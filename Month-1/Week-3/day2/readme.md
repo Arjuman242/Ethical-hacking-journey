@@ -59,4 +59,4 @@
 - I can navigate Linux filesystem confidently.  
 - I understand file permissions (`rwx`).  
 - I practiced hacking-style Linux basics using Bandit levels.  
-- Next step → Bandit Levels 6–10.
+- Next step → Bandit Levels 6–10
