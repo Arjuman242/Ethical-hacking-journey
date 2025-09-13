@@ -1,62 +1,53 @@
-# Linux Basics for Hackers – Day 1
+Hack The Box: Modules Completed
 
-## 📌 Topics Covered
-1. **Intro to Linux**
-   - Filesystem structure:
-     - `/` (root directory)
-     - `/home` (user home directories)
-     - `/etc` (config files)
-     - `/bin`, `/sbin`, `/usr/bin` (system commands)
-     - `/var` (logs, changing files)
-   - Basic Commands:
-     - `pwd` → show current directory
-     - `ls, ls -la` → list files
-     - `cd` → change directory
-     - `touch` → create file
-     - `mkdir` → create directory
-     - `cp`, `mv` → copy/move
-     - `rm` → delete file/folder
-     - `cat`, `less`, `head`, `tail` → read files
-     - `whoami`, `id`, `uname -a` → system info
+## Modules
+
+### 1. Linux Structure
+- Basic overview of how the Linux OS is organized.
+- Concept of common directories and their purposes (like `/etc`, `/bin`, `/home` etc.).
+
+### 2. Linux Distributions
+- Understanding that multiple flavours (distributions) of Linux exist — each with its own package manager and release model.
+- Basic concept of differences between popular distribution types (source-based, binary-based).
+
+### 3. Introduction to Shell
+- What a shell is (command interpreter) and why it is used.
+- Basic interaction with the shell: typing commands, simple input/output behavior.
 
 ---
 
-2. **Kali Linux Terminal & File Permissions**
-   - Permissions format: `rwxr-xr--`
-   - Commands:
-     - `ls -l` → show permissions
-     - `chmod` → change permissions
-       - Example: `chmod 755 file.txt`
-       - Example: `chmod +x script.sh`
-     - `chown` → change file owner
-     - `chgrp` → change file group
+## The Shell
+
+### Prompt Description
+- Structure of the shell prompt (user@host:path style prompts) and what information it shows.
+- Basic cues from the prompt (current user, current directory).
+
+### Getting Help
+- Using `man` pages, `--help` flags, or built-in help mechanisms.
+- Checking command usage and available options.
+
+### System Information
+- Commands for basic system info (like kernel/version/hostname/whoami).
+- Idea of tools that show hardware/software summaries.
 
 ---
 
-3. **OverTheWire: Bandit Practice**
-   - Connected using:
-     ```bash
-     ssh bandit0@bandit.labs.overthewire.org -p 2220
-     ```
-   - Practiced commands: `cat`, `ls -a`, `file`, `strings`, `grep`, `find`
-   - Completed Levels: **0 → 5**
-   - Learned:
-     - Hidden files (`ls -a`)
-     - Reading passwords with `cat`
-     - Using `file` to identify unknown files
-     - Extracting text from binaries using `strings`
-     - Searching with `grep` and `find`
+## Workflow
+
+### Navigation
+- Moving around the filesystem (`cd`, `pwd`, `ls` basic commands).
+- Short idea of relative vs absolute paths.
+
+### Working with Files and Directories
+- Overview of basic commands to create/inspect/delete files and directories (`touch`, `mkdir`, `rm`, `ls`, `stat`).
+- Basic notion of file permissions (read/write/execute).
+
+### Editing Files
+- Idea of simple file-editing — command line editors and the basic edit/save workflow.
+- Likely introduction to editors like `nano` or `vi` (if included in the course).
 
 ---
 
-4. **Book Reference**
-   - *Linux Basics for Hackers* – Chapters 1 & 2
-   - Practiced every command shown in the book.
+## Closing note
+This README is kept concise — only covering the topics you completed as shown in the screenshot. If you’d like, I can make this into a downloadable markdown file or add short command examples under each heading (only the ones you have already covered).
 
----
-
-## ✅ Today’s Takeaway
-- I can navigate Linux filesystem confidently.  
-- I understand file permissions (`rwx`).  
-- I practiced hacking-style Linux basics using Bandit levels.  
-- Next step → Bandit Levels 6–10
