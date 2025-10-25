@@ -211,5 +211,3 @@ mkdir -p ~/nishang && git clone https://github.com/samratashok/nishang.git ~/nis
 * Use `git` to fetch projects and supplementary tools from source.
 
 ---
-
-If you want this README in a shorter format, purely Hinglish, or with GitHub badges (e.g., `made-with: bash`), tell me and I'll update it.
